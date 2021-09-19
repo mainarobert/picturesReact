@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 
 class Search extends Component {
 
-    onInputChange (e) {
-        console.log(e.target.value)
-    }
+    state = {term: ''}
 
     render() {
         return (
@@ -14,7 +12,8 @@ class Search extends Component {
                         <label>Image Search</label>
                         <input 
                             type="text" 
-                            onChange={this.onInputChange} //onChange: user changes text in an input
+                            value= {this.state.term}
+                            onChange={(e) => this.setState({ term: e.target.value })} //onChange: user changes text in an input
                         />
                     </div>
                 </form>
