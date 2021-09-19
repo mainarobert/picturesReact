@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './App.css';
 import Search from './components/Search';
 
-const App = () => {
-  return (
-    <div className= "ui container" style= {{marginTop: '50px'}}>
-      <Search />
-    </div>
-  )
+class App extends Component {
+
+  onSearchSubmit(term) {
+    console.log(term)
+  }
+
+  render() {
+      return (
+      <div className= "ui container" style= {{marginTop: '50px'}}>
+        <Search onSubmit= {this.onSearchSubmit} />
+      </div>
+    )
+  }
 }
 
 export default App
