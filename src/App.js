@@ -5,8 +5,17 @@ import Search from './components/Search';
 
 class App extends Component {
 
-  onSearchSubmit(term) {
-    console.log(term)
+  async onSearchSubmit(term) {
+    const response = await axios.get('https://api.unsplash.com/search/photos', {
+      params: { query: term },
+      headers: {
+        Authorization: 'Client-ID IM1N2QbYCLiZz6VF-nGrDt1kxxLK6-aL-a1GR6ejZww' 
+      }
+    })
+
+    console.log(response.data.results)
+
+    //console.log(term)
   }
 
   render() {
