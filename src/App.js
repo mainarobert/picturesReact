@@ -16,7 +16,7 @@ class App extends Component {
       }
     })
 
-    console.log(response.data.results)
+    //console.log(response.data.results)
 
     this.setState( {images: response.data.results} )
 
@@ -27,7 +27,7 @@ class App extends Component {
       <div className= "ui container" style= {{marginTop: '50px'}}>
         <Search onSubmit= {this.onSearchSubmit} />
         Found: {this.state.images.length} images
-        <ImageList />
+        <ImageList images= {this.state.images}/>
       </div>
     )
   }
